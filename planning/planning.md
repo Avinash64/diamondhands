@@ -1,15 +1,15 @@
-#Frontend
+# Frontend
 
-##Screens
+## Screens
 Home
 Login
 Register
 
-##Logged in Screens
+## Logged in Screens
 Dashboard
 Settings
 Trade
 
-#Backend
+# Backend
 
-##Routes
+## Routes

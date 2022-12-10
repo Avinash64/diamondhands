@@ -13,3 +13,7 @@ Trade
 # Backend
 
 ## Routes
+user
+trade
+balence
+accounts

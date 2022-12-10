@@ -18,6 +18,12 @@ router.get("/:id", getUser, (req, res) => {
 });
 
 router.post("/", async (req, res) => {
+  const users = await User.find({username:req.body.username});
+  if (users.length>0){
+    res.json({ message: "Username taken"})
+    return
+  }
+  console.log(users)
   const user = new User({
     username: req.body.username,
     password: await bcrypt.hash(req.body.password, 10)

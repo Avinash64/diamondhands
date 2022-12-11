@@ -2,6 +2,7 @@ import React, {useState} from "react";
 import Axios from "axios"
 import "./login.css"
 import { useNavigate } from "react-router-dom";
+import { useCookies } from 'react-cookie';
 
 const Register = () => {
     const navigate = useNavigate();
@@ -19,8 +20,11 @@ const Register = () => {
                 setErrmsg("Username or password invalid")
             }
             else{
+                document.cookie =
+    `token=Bearer ${response.data.token}; SameSite=None; path=/`
+                console.log(document.cookie)
                 setErrmsg("")
-                navigate("/home");
+                navigate("/");
             }
         
         })

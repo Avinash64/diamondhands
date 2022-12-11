@@ -1,6 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import Login from "./components/login"
+import Dash from "./components/dash"
 import Register from './components/register';
 import {Link,
 BrowserRouter as Router,
@@ -25,7 +26,7 @@ function App() {
     </div>
 
     <Routes>
-        <Route exact path="/" element={<Home />} />
+        <Route exact path="/" element={<Dash />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
       </Routes>

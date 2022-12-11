@@ -15,6 +15,7 @@ const Register = () => {
             console.log(response.status);
             if(response.status!==201){
                 setErrmsg("Username already taken")
+                console.log(document.cookie)
             }
         
         })

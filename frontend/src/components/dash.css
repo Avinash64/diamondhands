@@ -1,0 +1,9 @@
+.bar {
+    width: auto;
+}
+
+.page {
+    display:flex; 
+    height: 100vh;
+    flex-direction:row;
+}

@@ -3,36 +3,39 @@ import './App.css';
 import Login from "./components/login"
 import Dash from "./components/dash"
 import Register from './components/register';
+import Sidebar from './components/sidebar';
+import Navbar from './components/navbar';
+import Home from './components/home';
+import Trending from './components/trending';
 import {Link,
 BrowserRouter as Router,
 Routes,
 Route} from "react-router-dom"
 
-const Home = () => {
-  return(
-    <p>Hi</p>
-  )
-}
 
 function App() {
   return (
     // <Register />
     // <Login />
     <Router>
+      <div className='App'>
       <div>
     <Link to="/login">Login</Link>
     <Link to="/register">Register</Link>
     <Link to="/">Home</Link>
     </div>
+    <Navbar />
 
     <Routes>
-        <Route exact path="/" element={<Dash />} />
+        <Route exact path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
+        <Route path="/dashboard" element={<Dash />} />
+        <Route path="/trending" element={<Trending />} />
       </Routes>
 
 
-
+      </div>
     </Router>
   );
 }

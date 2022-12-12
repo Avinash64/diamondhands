@@ -23,6 +23,7 @@ function getCookie(cname) {
   }
 
   const Settings = () => {
+    const navigate = useNavigate();
     const [user, setTrending] = useState("")
     const [loaded, setLoaded] = useState("")
     const [deposit, setDeposit] = useState("")
@@ -33,10 +34,24 @@ function getCookie(cname) {
           id : user._id
       }).then(response => {
           console.log(response.data);
-
+          navigate("/dashboard")
           })
       
       }
+      const onDelete = () => {
+        axios.delete(`http://localhost:3080/user/${user._id}`,{
+        }).then(response => {
+            console.log(response.data);
+            document.cookie = "token=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;"
+            navigate("/")
+
+            }).catch(function (error) {
+        console.error(error);
+        document.cookie = "token=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;"
+            navigate("/")
+      });
+        
+        }
 
     var options = {
         method: 'GET',
@@ -66,15 +81,15 @@ let listItems =""
         <Sidebar />
         </div>
         <div>
-        <h1>Dashboard</h1>
-        <h2>Welcome {user.username}</h2>
-        <h2>Your current balance is {user.balance}</h2>
+        <h1>Settings</h1>
+        <div>Reset your account below</div>
         <button onClick={onSubmit}>Reset</button>
         {/* <h2>You currently have {user.accounts.length} accounts</h2> */}
-  
+        <div>Delete your account below</div>
+        <button onClick={onDelete}>Delete</button>
 
         {/* <p>{JSON.stringify(trending)}</p> */}
-        <ul>{JSON.stringify(user)}</ul>
+        {/* <ul>{JSON.stringify(user)}</ul> */}
         </div>
         </div>
         </>

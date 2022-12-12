@@ -2,11 +2,14 @@
     height: 50px;
 } */
 
-.form {background-color: aqua;
+.form {
+    /* background-color: aqua; */
     width: 100%;
     display: flex;
 }
 
 .container {
     width: 100%;
+
+    margin-left: 20px;
 }

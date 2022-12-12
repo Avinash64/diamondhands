@@ -19,8 +19,9 @@ router.post("/", async (req, res) => {
     amount: parseFloat(req.body.amount),
     value: parseFloat(req.body.value)
   }
-  if(coin.value){
+  if(coin.value && coin.amount && user.balance - coin.value * coin.amount >= 0){
   user.transactions.push(coin)
+  user.balance -= coin.value * coin.amount
   }
   var found = false
   // user.accounts.forEach(element => {

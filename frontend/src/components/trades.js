@@ -151,7 +151,7 @@ if(trends === "" && user.transactions){
         <button onClick={onSubmit} className="submit2" >Submit</button>
         </div>
         <div>{listItems}</div>
-        <div>{JSON.stringify(user.transactions)}</div>
+        {/* <div>{JSON.stringify(user.transactions)}</div> */}
         </div>
         </div>
 

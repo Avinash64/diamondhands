@@ -12,11 +12,7 @@ export const sidedata = [
     },         {title:"Trades",
     icon: "",
     link: "Trades",
-},    {
-        title:"Accounts",
-        icon: "",
-        link: "",
-    },    {
+},     {
         title:"Markets",
         icon: "",
         link: "/market",

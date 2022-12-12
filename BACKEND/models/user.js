@@ -11,10 +11,11 @@ const userTemplate = new mongoose.Schema({
     required: true,
   },
   accounts: [],
-  balence: {
+  balance: {
     type: Number,
     default: 0
-  }
+  },
+  transactions : []
 
 });
 

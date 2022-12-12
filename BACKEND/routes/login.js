@@ -35,7 +35,7 @@ router.post("/", async (req, res) => {
 
 router.get("/loggedin", validate, async (req, res) => {
 
-res.send("logged in")
+res.json(res.locals.user)
 
 })
 

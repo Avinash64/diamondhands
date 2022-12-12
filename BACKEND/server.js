@@ -22,6 +22,10 @@ app.use('/user', userRouter)
 const loginRouter = require('./routes/login')
 app.use('/login', loginRouter)
 
+const tradeRouter = require('./routes/trade')
+app.use('/trade', tradeRouter)
+
+
 app.listen(port, () => {
   console.log(`localhost:${port}`)
 })

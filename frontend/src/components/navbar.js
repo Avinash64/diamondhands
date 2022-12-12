@@ -2,7 +2,7 @@ import React from 'react'
 import "./navbar.css"
 function Navbar() {
 
-    ;
+    const onSubmit = () => {document.cookie = "token=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;"}
 
   return (
     <nav className='nav'>
@@ -17,7 +17,7 @@ function Navbar() {
                 <a href='/register'>Register</a>
             </li>
             <li>
-                <a href='/' onClick={document.cookie = "token=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;"}>Log out</a>
+                <a href='/' onClick={onSubmit}>Log out</a>
             </li>
         </ul>
     </nav>

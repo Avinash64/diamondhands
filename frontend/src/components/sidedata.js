@@ -19,7 +19,7 @@ export const sidedata = [
     },    {
         title:"Markets",
         icon: "",
-        link: "",
+        link: "/market",
     },    {
         title:"Settings",
         icon: "",

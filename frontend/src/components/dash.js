@@ -12,10 +12,10 @@ function getCookie(cname) {
     let ca = decodedCookie.split(';');
     for(let i = 0; i <ca.length; i++) {
       let c = ca[i];
-      while (c.charAt(0) == ' ') {
+      while (c.charAt(0) === ' ') {
         c = c.substring(1);
       }
-      if (c.indexOf(name) == 0) {
+      if (c.indexOf(name) === 0) {
         return c.substring(name.length, c.length);
       }
     }
@@ -39,7 +39,7 @@ const Dash = () => {
       };
       console.log(document.cookie)
 
-      if(user == ""){
+      if(user === ""){
     axios.request(options).then(function (response) {
         console.log(response.data);
         setTrending(response.data);

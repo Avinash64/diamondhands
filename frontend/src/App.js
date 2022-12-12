@@ -4,6 +4,7 @@ import Login from "./components/login"
 import Dash from "./components/dash"
 import Register from './components/register';
 import Sidebar from './components/sidebar';
+import Market from './components/markets';
 import Navbar from './components/navbar';
 import Home from './components/home';
 import Trending from './components/trending';
@@ -32,6 +33,7 @@ function App() {
         <Route path="/register" element={<Register />} />
         <Route path="/dashboard" element={<Dash />} />
         <Route path="/trending" element={<Trending />} />
+        <Route path="/market" element={<Market />} />
       </Routes>
 
 

@@ -19,6 +19,10 @@ app.use(cors({
 const userRouter = require('./routes/user')
 app.use('/user', userRouter)
 
+const settingsRouter = require('./routes/settings')
+app.use('/settings', settingsRouter)
+
+
 const loginRouter = require('./routes/login')
 app.use('/login', loginRouter)
 

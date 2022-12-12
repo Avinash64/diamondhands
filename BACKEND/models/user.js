@@ -13,7 +13,7 @@ const userTemplate = new mongoose.Schema({
   accounts: [],
   balance: {
     type: Number,
-    default: 0
+    default: 10000
   },
   transactions : []
 

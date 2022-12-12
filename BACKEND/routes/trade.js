@@ -7,27 +7,46 @@ require("dotenv").config();
 
 
 router.get("/", validate, (req, res) => {
-  res.send(res.locals.user.trades);
+  res.send(res.locals.user.transactions);
 });
+
 
 router.post("/", async (req, res) => {
   const user = await User.findById(req.body.id)
   console.log("bruh",user)
-  user.balance += parseInt(req.body.add);
+  const coin = {
+    id: req.body.id2,
+    amount: parseFloat(req.body.amount),
+    value: parseFloat(req.body.value)
+  }
+  user.transactions.push(coin)
+  var found = false
+  // user.accounts.forEach(element => {
+  //   if(element.id === req.body.id2){
+  //     element.amount += parseInt(req.body.amount);
+  //     console.log(element.amount += parseInt(req.body.amount))
+  //     found = true;
+  //   }
+  // });
+  for (let index = 0; index < user.accounts.length; index++) {
+    const element = user.accounts[index];
+    if(element.id === req.body.id2){
+      user.accounts[index].amount += req.body.amount;
+      console.log(element)
+      found = true;
+    }
+  }
+  if (!found){
+    user.accounts.push({
+      id: req.body.id2,
+      amount: req.body.amount
+    })
+  }
   try {
     const newUser = await user.save();
     res.status(201).json(newUser);
   } catch (err) {
     res.status(400).json({ message: err.message });
-  }
-});
-
-router.patch("/:id", getUser, async (req, res) => {
-  try {
-    const updatedUser = await res.user.save();
-    res.json(updatedUser);
-  } catch (error) {
-    res.status(400).json({ message: error.message });
   }
 });
 

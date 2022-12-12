@@ -8,10 +8,7 @@
     flex-direction:row;
 }
 
-.accounts {
-    /* width: 25%; */
 
-}
 
 .accounts .row{
     justify-content: space-around;

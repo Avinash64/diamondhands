@@ -14,3 +14,11 @@
 .trend {
     width: 80vw;
 }
+
+.drop {
+    border-radius: 10% 0% 0% 10%;
+}
+
+.confirm {
+    border-radius: 0% 10% 10% 0%;
+}

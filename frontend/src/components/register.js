@@ -70,10 +70,10 @@ const Register = () => {
             <h1>Register</h1>
             <div className="forms">
             <p className="err">{errmsg}</p>
-            <input type="text"
+            <input className="field" type="text"
                 onChange={(e) => setUsername(e.target.value)}
              placeholder="Username"></input>
-            <input type="password"
+            <input className="field" type="password"
             onChange={(e) => setPassword(e.target.value)}
             placeholder="Password"></input>
             </div>

@@ -30,9 +30,19 @@ if(trends !== ""){
     listItems = trends.map((number) =>  
     <li className="row" >
     <img src={number.image.replace('large', 'small')}></img>
-    <div>{number.id}</div>
+    {/* <div>{number.id}</div> */}
     <div>{number.name}</div>
-    <div>{number.price_btc}</div>
+    <div>{number.current_price}</div>
+    <div>
+
+    <select className="drop">
+      <option>Buy</option>
+      <option>Sell</option>
+    </select>
+    <input type="text" placeholder={`Amount ${number.id}`}></input>
+    <button type="confirm">Confirm</button>
+    </div>
+    <div></div>
     {/* {JSON.stringify(number)} */}
                                             </li>);}
     return (
@@ -42,10 +52,19 @@ if(trends !== ""){
         <Sidebar />
         </div>
         <div className="trend">
-        <h1>Trending</h1>
+        <h1>Market</h1>
         {/* <p>{JSON.stringify(trending)}</p> */}
-        <ul>{JSON.stringify(trends)}</ul>
-        <ul>{listItems}</ul>
+        {/* <ul>{JSON.stringify(trends)}</ul> */}
+        <ul>
+        <li className="row" >
+          <div>Icon</div>
+          <div>Name</div>
+          <div>Amount(USD)</div>
+          <div>Buy/Sell</div>
+          <div></div>
+        </li>
+          {listItems}
+          </ul>
         {/* <ul>{
         trends.coins.map((val,key)=>{
       return (

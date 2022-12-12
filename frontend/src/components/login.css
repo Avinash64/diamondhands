@@ -45,7 +45,7 @@
     width: 100%;
 }
 
-input {
+.text {
     border: none;
     background-color: rgb(229, 226, 226);
     width: 80%;
@@ -58,7 +58,7 @@ input {
     
 }
 
-input:focus {
+.text:focus {
     outline-color: rgb(32, 177, 255);
 }
 

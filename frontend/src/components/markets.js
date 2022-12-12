@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from "react";
-import Axios from "axios"
+import xios from "axios"
 import "./markets.css"
 import { useNavigate } from "react-router-dom";
 
@@ -15,6 +15,23 @@ const Market = () => {
 
 let options = {method: 'GET'};
 
+// const onSubmit = (id, amount,value) => {
+//   var options = {
+//     method: 'POST',
+//     url: 'http://localhost:3080/trade',
+//     headers: {
+//       'Content-Type': 'application/json',
+//       token: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2Mzk2N2I3ODIwMGZiMWQ5NzM3OGI3ZTciLCJpYXQiOjE2NzA4MjA2NjB9.cHsTWjPIxZ-O_ECyNqc1hEgBXcFDbh7ug4p1I16SKfQ'
+//     },
+//     data: {id2: id, id: '6397696c447eacdd8ee3ed1c', amount: amount, value: value}
+//   };
+  
+//   axios.request(options).then(function (response) {
+//     console.log(response.data);
+//   }).catch(function (error) {
+//     console.error(error);
+//   });
+// }
 
 if(trends === ""){
 fetch(url, options)
@@ -30,19 +47,12 @@ if(trends !== ""){
     listItems = trends.map((number) =>  
     <li className="row" >
     <img src={number.image.replace('large', 'small')}></img>
-    {/* <div>{number.id}</div> */}
+    <div>{number.id}</div>
     <div>{number.name}</div>
     <div>{number.current_price}</div>
-    <div>
+    {/* <div>
 
-    <select className="drop">
-      <option>Buy</option>
-      <option>Sell</option>
-    </select>
-    <input type="text" placeholder={`Amount ${number.id}`}></input>
-    <button type="confirm">Confirm</button>
-    </div>
-    <div></div>
+  
     {/* {JSON.stringify(number)} */}
                                             </li>);}
     return (
@@ -58,10 +68,9 @@ if(trends !== ""){
         <ul>
         <li className="row" >
           <div>Icon</div>
+          <div>id</div>
           <div>Name</div>
           <div>Amount(USD)</div>
-          <div>Buy/Sell</div>
-          <div></div>
         </li>
           {listItems}
           </ul>

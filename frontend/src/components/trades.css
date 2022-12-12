@@ -1,0 +1,12 @@
+/* .submit2 {
+    height: 50px;
+} */
+
+.form {background-color: aqua;
+    width: 100%;
+    display: flex;
+}
+
+.container {
+    width: 100%;
+}

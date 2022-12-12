@@ -11,7 +11,7 @@ export const sidedata = [
         link: "/trending",
     },         {title:"Trades",
     icon: "",
-    link: "",
+    link: "Trades",
 },    {
         title:"Accounts",
         icon: "",
@@ -23,7 +23,7 @@ export const sidedata = [
     },    {
         title:"Settings",
         icon: "",
-        link: "",
+        link: "/settings",
     },
 ]
 

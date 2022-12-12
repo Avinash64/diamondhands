@@ -22,15 +22,14 @@ function getCookie(cname) {
     return "";
   }
 
-  const Dash = () => {
+  const Settings = () => {
     const [user, setTrending] = useState("")
     const [loaded, setLoaded] = useState("")
     const [deposit, setDeposit] = useState("")
     const fetch = require('node-fetch');
 
     const onSubmit = () => {
-      axios.post('http://localhost:3080/trade/balence',{
-          add : deposit,
+      axios.post('http://localhost:3080/settings/reset',{
           id : user._id
       }).then(response => {
           console.log(response.data);
@@ -70,6 +69,7 @@ let listItems =""
         <h1>Dashboard</h1>
         <h2>Welcome {user.username}</h2>
         <h2>Your current balance is {user.balance}</h2>
+        <button onClick={onSubmit}>Reset</button>
         {/* <h2>You currently have {user.accounts.length} accounts</h2> */}
   
 
@@ -81,4 +81,4 @@ let listItems =""
         )
 }
 
-export default Dash
+export default Settings

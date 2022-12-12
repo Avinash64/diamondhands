@@ -19,7 +19,9 @@ router.post("/", async (req, res) => {
     amount: parseFloat(req.body.amount),
     value: parseFloat(req.body.value)
   }
+  if(coin.value){
   user.transactions.push(coin)
+  }
   var found = false
   // user.accounts.forEach(element => {
   //   if(element.id === req.body.id2){

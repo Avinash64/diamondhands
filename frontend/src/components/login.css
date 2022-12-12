@@ -45,12 +45,12 @@
     width: 100%;
 }
 
-.text {
+.field {
     border: none;
     background-color: rgb(229, 226, 226);
     width: 80%;
     border-radius: 0.25em;
-    text-align: center;
+    field-align: center;
     padding: 2em;
     font-size: 1rem;
     margin: 20px;
@@ -58,7 +58,7 @@
     
 }
 
-.text:focus {
+.field:focus {
     outline-color: rgb(32, 177, 255);
 }
 
